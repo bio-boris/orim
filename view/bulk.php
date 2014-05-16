@@ -10,15 +10,14 @@ class bulk_interface{
     function dropDown(){
         $plants = array('athaliana','maize');
 
-        $dropdown = "<select id='bulk_organisms' name='bulk_organisms' title='Bulk Organisms Dropdown'>";
-        $selects = array();    
+        $html = array();
+        $html[] = "<select id='bulk_organisms' name='bulk_organisms' title='Bulk Organisms Dropdown'>";
 
-        foreach ($plants as $plant){
-            $selects[] .= "<select value='$plant'>$plant<select>";
+        foreach ($plants as &$plant){
+            $html[] .= "<option value='$plant'>$plant</option>";
         }
-        $end_dropdown ="</select>";
+        $html[] ="</select>";
     
-        $html = array($dropdown,$selects,$end_dropdown);
     
         return implode("\n",$html); 
 

@@ -1,9 +1,18 @@
-<html>
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+?>
 
-//header.php
+<html>
+<head>
+<?php
+include 'view/header.php';
+$header = new generic_header();
+echo $header->generic_header();
 
 ?>
+</head>
+
 <body>
 <?php
 
